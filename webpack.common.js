@@ -2,9 +2,8 @@ const path = require('path');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-
-  devtool: 'inline-source-map',
+  //mode: 'development',
+  //devtool: 'inline-source-map',
 
   entry: {
       bg: './src/bg/bg.ts',
