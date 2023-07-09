@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Auto Bookmark History",
   "version": "0.1.1",
   "description": "automatically bookmark pages that match a set URL",
@@ -9,6 +9,9 @@
   },
   "action": {
   },
+  "options_ui": {
+    "page": "pages/options/index.html"
+  },
   "icons": {
     "48": "icons/icon.png"
   },
@@ -16,5 +19,6 @@
     "storage",
     "bookmarks",
     "history"
-  ]
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
 }
