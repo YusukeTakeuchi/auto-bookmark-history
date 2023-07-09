@@ -1,4 +1,5 @@
 const path = require('path');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -6,10 +7,8 @@ module.exports = {
   devtool: 'inline-source-map',
 
   entry: {
-      //popoup: './src/popup/popup.tsx',
       bg: './src/bg/bg.ts',
-      //"bookmarks/index": './src/bookmarks/index.tsx'
-      //options: './src/options/options.ts',
+      'pages/options/index': './src/pages/options/index.tsx'
   },
 
   output: {
@@ -44,7 +43,17 @@ module.exports = {
             '@babel/preset-typescript',
           ],
         },
-      }
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
     ]
-  }
+  },
+
+  plugins: [
+    new MonacoWebpackPlugin({
+      languages: ['javascript']
+    })
+  ]
 };
